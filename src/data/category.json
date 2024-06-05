@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "GamingHeadphone.png",
+    "categoryName": "หูฟังเกมมิ่ง & ลำโพงเกมมิ่ง"
+  },
+  {
+    "id": 2,
+    "image": "GamingHeadphone.png",
+    "categoryName": "คีย์บอร์ดเกมมิ่ง"
+  },
+  {
+    "id": 3,
+    "image": "GamingHeadphone.png",
+    "categoryName": "Mechanical & Custom Keyboard"
+  },
+  {
+    "id": 4,
+    "image": "GamingHeadphone.png",
+    "categoryName": "เมาส์เกมมิ่ง"
+  },
+  {
+    "id": 5,
+    "image": "GamingHeadphone.png",
+    "categoryName": "โต๊ะ & เก้าอี้เกมมิ่ง"
+  },
+  {
+    "id": 6,
+    "image": "GamingHeadphone.png",
+    "categoryName": "อุปกรณ์สตรีมเกม"
+  },
+  {
+    "id": 7,
+    "image": "GamingHeadphone.png",
+    "categoryName": "Game Console"
+  },
+  {
+    "id": 8,
+    "image": "GamingHeadphone.png",
+    "categoryName": "จอยเกม & Controller"
+  }
+]

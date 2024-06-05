@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "1",
+    "productName": "หูฟัง HyperX Cloud Earbuds II",
+    "displayPrice": "฿1,290",
+    "discount": "-13%",
+    "fullPrice": "฿1,490"
+  },
+  {
+    "id": 2,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "2",
+    "productName": "หูฟัง Logitech G333 In-Ear",
+    "displayPrice": "฿1,390",
+    "discount": "-17%",
+    "fullPrice": "฿1,690"
+  },
+  {
+    "id": 3,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "3",
+    "productName": "หูฟัง HyperX Cloud III Gaming Headset",
+    "displayPrice": "฿3,090",
+    "discount": "",
+    "fullPrice": "฿3,090"
+  },
+  {
+    "id": 4,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "4",
+    "productName": "หูฟัง Logitech G435 Lightspeed Gaming Wireless Headphone",
+    "displayPrice": "฿1,990",
+    "discount": "-23%",
+    "fullPrice": "฿2,590"
+  },
+  {
+    "id": 5,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "5",
+    "productName": "หูฟัง JBL Quantum 50 Gaming Headphone",
+    "displayPrice": "฿973",
+    "discount": "-30%",
+    "fullPrice": "฿1,390"
+  },
+  {
+    "id": 6,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "6",
+    "productName": "หูฟัง HyperX Cloud III Wireless Gaming Headset",
+    "displayPrice": "฿4,890",
+    "discount": "-13%",
+    "fullPrice": "฿4,890"
+  },
+  {
+    "id": 7,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "7",
+    "productName": "หูฟัง HyperX Cloud Earbuds II",
+    "displayPrice": "฿1,290",
+    "discount": "-13%",
+    "fullPrice": "฿1,490"
+  },
+  {
+    "id": 8,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "8",
+    "productName": "หูฟัง Logitech G333 In-Ear",
+    "displayPrice": "฿1,390",
+    "discount": "-17%",
+    "fullPrice": "฿1,690"
+  },
+  {
+    "id": 9,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "9",
+    "productName": "หูฟัง HyperX Cloud III Gaming Headset",
+    "displayPrice": "฿3,090",
+    "discount": "",
+    "fullPrice": "฿3,090"
+  },
+  {
+    "id": 10,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "10",
+    "productName": "หูฟัง Logitech G435 Lightspeed Gaming Wireless Headphone",
+    "displayPrice": "฿1,990",
+    "discount": "-23%",
+    "fullPrice": "฿2,590"
+  },
+  {
+    "id": 11,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "11",
+    "productName": "หูฟัง JBL Quantum 50 Gaming Headphone",
+    "displayPrice": "฿973",
+    "discount": "-30%",
+    "fullPrice": "฿1,390"
+  },
+  {
+    "id": 12,
+    "image": "hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg",
+    "imageHover": "hyperx-cloud-ii-gaming-earbuds-red-mic.jpg",
+    "numProduct": "12",
+    "productName": "หูฟัง HyperX Cloud III Wireless Gaming Headset",
+    "displayPrice": "฿4,890",
+    "discount": "-13%",
+    "fullPrice": "฿4,890"
+  }
+]

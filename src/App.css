@@ -2,45 +2,154 @@ a {
   cursor: pointer;
 }
 
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.container-header {
+  height: 64px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.gaimg-category-text-container {
+  background: rgba(244, 246, 248, 1);
+  border-radius: 8px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-right-category,
+.btn-left-category {
+  border: 0px;
+  outline: 0px;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 6px 10px;
+  color: rgb(15, 99, 233);
+}
+
+.btn-tab {
+  color: rgba(69, 79, 91, 1);
+  background: rgba(145, 158, 171, 0.15);
+  height: 38px;
+  padding: 12px 16px;
+  margin-right: 8px;
+  border-radius: 20px;
+}
+
+.product-image-container {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  box-shadow: rgba(145, 158, 171, 0.16) 0px 4px 8px;
+  overflow: hidden;
+}
+
+.product-image-hover {
+  transition: opacity 0.15s ease 0s;
+  box-shadow: rgba(15, 99, 233, 0.24) 0px 4px 8px;
+  border-radius: 50%;
+}
+
+.badge-product {
+  bottom: -12px;
+}
+
+.btn-right-product,
+.btn-left-product {
+  border: 0px;
+  outline: 0px;
+  box-shadow: rgba(145, 158, 171, 0.16) 0px 8px 16px;
+  top: calc(30% - 15px);
+  color: rgb(15, 99, 233);
+}
+
+.filter-product {
+  background: rgba(145, 158, 171, 0.08);
+}
+
+.custom-coupon::before {
+  content: " ";
+  display: inline-block;
+  width: 6px;
+  background-color: #fff;
+  border-radius: 28px;
+  height: 6px;
+  position: absolute;
+  top: 5px;
+  left: -3px;
+}
+
+.custom-coupon::after {
+  content: " ";
+  display: inline-block;
+  width: 6px;
+  background-color: #fff;
+  border-radius: 28px;
+  height: 6px;
+  position: absolute;
+  top: 5px;
+  right: -3px;
+}
+
+@media (min-width: 900px) {
+  .container-header {
+    height: 120px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .gaming-icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .gaming-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .gaimg-category {
+    width: 232px;
+    height: 112px;
+  }
+
+  .gaming-category-img {
+    max-width: 112px;
+    height: 112px;
+  }
+
+  .gaimg-category-text-container {
+    height: 80px;
+  }
+
+  .gaming-category-text {
+    width: 88px;
+  }
+
+  .scroll-progress-container {
+    width: 400px;
+  }
+
+  .scroll-progress {
+    padding-right: 160px;
+  }
+
+  .scroll {
+    padding-right: calc(100% - 160px);
+  }
+
+  .top3-badge-product {
+    max-width: 128px;
+    max-height: 40px;
+  }
+
+  .other-badge-product {
+    max-width: 104px;
+    max-height: 36px;
+  }
+
+  .brand-logo {
+    width: 146px;
+    height: 146px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 1280px) {
+  .btn-right-category {
+    right: -25px;
+  }
+
+  .btn-left-category {
+    left: -25px;
   }
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
