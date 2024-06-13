@@ -18,12 +18,9 @@ const Header = () => {
     <div className="container-header">
       <div className="fixed left-0 right-0 z-50 bg-white">
         <div className="container mx-auto">
-          <div style={{ height: "64px" }}>
+          <div className="h-16">
             <div className="flex items-center h-full">
-              <div
-                className="flex items-center w-full h-full"
-                style={{ columnGap: "24px" }}
-              >
+              <div className="flex items-center w-full h-full gap-x-6">
                 <img
                   className="my-2"
                   src={brandIcon}
@@ -32,14 +29,14 @@ const Header = () => {
                   height={40}
                 />
                 <div className="flex w-fit">
-                  <button className="py-2" style={{ width: "96px" }}>
-                    <span>หน้าหลัก</span>
+                  <button className="w-24 py-2 text-sm font-bold">
+                    หน้าหลัก
                   </button>
-                  <button className="py-2" style={{ width: "96px" }}>
-                    <span>สินค้า</span>
+                  <button className="w-24 py-2 text-sm font-bold">
+                    สินค้า
                   </button>
-                  <button className="py-2" style={{ width: "96px" }}>
-                    <span>โปรโมชัน</span>
+                  <button className="w-24 py-2 text-sm font-bold">
+                    โปรโมชัน
                   </button>
                 </div>
                 <div style={{ width: "100%" }}>
@@ -51,14 +48,11 @@ const Header = () => {
                     }}
                   >
                     <div
-                      className="flex items-center bg-gray-100 rounded-full focus:outline-none focus:ring-1 
+                      className="flex items-center max-h-10 bg-gray-100 rounded-full focus:outline-none focus:ring-1 
               focus:ring-blue-500 hover:ring-1 hover:ring-blue-500"
-                      style={{ padding: "2px 4px", maxHeight: "40px" }}
+                      style={{ padding: "2px 4px" }}
                     >
-                      <div
-                        className="flex items-center justify-center bg-blue-600 rounded-2xl"
-                        style={{ width: "32px", height: "32px" }}
-                      >
+                      <div className="flex items-center justify-center w-8 min-w-8 h-8 bg-blue-600 rounded-2xl">
                         <SearchRoundedIcon
                           style={{ fontSize: "22px", color: "#fff" }}
                         />
@@ -74,7 +68,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center" style={{ columnGap: "8px" }}>
+              <div className="flex items-center gap-x-2">
                 <a href="/">
                   <div
                     className="flex items-center flex-col text-center"
@@ -107,11 +101,7 @@ const Header = () => {
                     }}
                   >
                     <button className="p-1">
-                      <img
-                        src={reviewIcon}
-                        style={{ width: "24px" }}
-                        alt="header Icon"
-                      />
+                      <img src={reviewIcon} width={24} alt="header Icon" />
                     </button>
                     <span
                       className="w-12"
@@ -164,8 +154,7 @@ const Header = () => {
                     >
                       <img
                         src={thIcon}
-                        className="w-full h-full"
-                        style={{ objectFit: "cover" }}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </button>
@@ -214,9 +203,9 @@ const Header = () => {
                 className="flex"
                 style={{ maxHeight: "36px", minHeight: "36px" }}
               >
-                <div className="flex" style={{ columnGap: "8px" }}>
+                <div className="flex gap-x-2">
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">
@@ -225,7 +214,7 @@ const Header = () => {
                     <span className="text-sm font-semibold">สำหรับคุณ</span>
                   </a>
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">
@@ -234,7 +223,7 @@ const Header = () => {
                     <span className="text-sm font-semibold">ฟังเพลง</span>
                   </a>
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">
@@ -243,7 +232,7 @@ const Header = () => {
                     <span className="text-sm font-semibold">เล่นเกม</span>
                   </a>
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">
@@ -252,7 +241,7 @@ const Header = () => {
                     <span className="text-sm font-semibold">คอมพิวเตอร์</span>
                   </a>
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">
@@ -261,7 +250,7 @@ const Header = () => {
                     <span className="text-sm font-semibold">จัดโต๊ะคอม</span>
                   </a>
                   <a
-                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/25"
+                    className="inline-flex justify-center items-center rounded-lg text-white hover:bg-slate-100/20"
                     style={{ padding: "9px 8px", minWidth: "90px" }}
                   >
                     <div className="w-5 h-5 mr-2 bg-white rounded-full">

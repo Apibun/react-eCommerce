@@ -7,13 +7,10 @@ import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import bestSeller from "./assets/best-seller.png";
 import bestSellerProductItems from "./data/bestSellerProduct.json";
-import productEarbuds from "./assets/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
 import top3BadgeProduct from "./assets/top3-rank-badge.png";
 import badgeProduct from "./assets/other-rank-badge.png";
 import brandLogoItems from "./data/brandLogo.json";
-import productEarbudsHover from "./assets/hyperx-cloud-ii-gaming-earbuds-red-mic.jpg";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import brandLogo from "./assets/Brand-Logo.jpg";
 import fastDeliveryLogo from "./assets/sameday.png";
 import freeShipping from "./assets/free-shipping.png";
 import productItems from "./data/product.json";
@@ -110,7 +107,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="container-content">
+      <div>
         <div
           className="container mx-auto"
           style={{ height: "180px", minHeight: "180px" }}
@@ -485,7 +482,7 @@ const App = () => {
                 transition: "box-shadow 0.15s",
               }}
             >
-              <a href="/">
+              <a href="/detail">
                 <div className="relative">
                   <div>
                     <img

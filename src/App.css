@@ -83,6 +83,13 @@ a {
   right: -3px;
 }
 
+.preview-product-mini {
+  width: 56px;
+  height: 56px;
+  border: solid 1.5px white;
+  transition: border 0.3s;
+}
+
 @media (min-width: 900px) {
   .container-header {
     height: 120px;
