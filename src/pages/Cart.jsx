@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Checkbox from "@mui/material/Checkbox";
-import hyperXProduct from "../assets/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
+import hyperXProduct from "../assets/images/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { useState } from "react";
@@ -62,16 +62,16 @@ const Cart = () => {
                   <img src={hyperXProduct} alt="hyperx cloud earbuds" />
                 </div>
                 <div>
-                  <a href="/detail" className="text-sm">
-                    หูฟัง HyperX Cloud Earbuds II
-                  </a>
+                  <Link to={"/detail"}>
+                    <p className="text-sm">หูฟัง HyperX Cloud Earbuds II</p>
+                  </Link>
                   <p className="text-xs text-gray-600">Color : Red</p>
                 </div>
               </div>
               <div className="w-3/12 pl-4">
                 <div className="flex items-center gap-x-1">
                   <div className="h-6 text-sm text-white rounded-lg bg-red-600">
-                    <p style={{ padding: "2px 4px" }}>-13%</p>
+                    <p className="px-1 py-[2px]">-13%</p>
                   </div>
                   <p className="text-xl font-bold">฿1,290</p>
                 </div>
@@ -84,7 +84,7 @@ const Cart = () => {
                     onClick={minusQuantity}
                     disabled={inputQuantity <= 1}
                   >
-                    <RemoveRoundedIcon style={{ fontSize: "20px" }} />
+                    <RemoveRoundedIcon sx={{ fontSize: "20px" }} />
                   </button>
                   <div className="flex item-center">
                     <input
@@ -101,7 +101,7 @@ const Cart = () => {
                     onClick={plusQuantity}
                     disabled={inputQuantity >= 99}
                   >
-                    <AddRoundedIcon style={{ fontSize: "20px" }} />
+                    <AddRoundedIcon sx={{ fontSize: "20px" }} />
                   </button>
                 </div>
                 <IconButton>
@@ -149,7 +149,7 @@ const Cart = () => {
                     <button>
                       <InfoOutlinedIcon
                         className="text-blue-600"
-                        style={{ fontSize: "16px" }}
+                        sx={{ fontSize: "16px" }}
                       />
                     </button>
                   </div>

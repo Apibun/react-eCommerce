@@ -1,4 +1,4 @@
-import categoryItem from "../assets/hyperx-cloud-ii-gaming-earbuds-red-front-view.png";
+import categoryItem from "../assets/images/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
 
 const CategoryItem = () => {
   return (

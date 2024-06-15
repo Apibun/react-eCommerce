@@ -3,7 +3,7 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import { Divider } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import deliveryIcon from "../assets/delivery.png";
+import deliveryIcon from "../assets/images/delivery.png";
 import DiscountOutlinedIcon from "@mui/icons-material/DiscountOutlined";
 import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -42,10 +42,7 @@ const Checkout = () => {
                 </div>
                 <div className="flex items-center">
                   <Checkbox className="invisible" />
-                  <p
-                    className="text-base/5 font-bold"
-                    style={{ width: "183px" }}
-                  >
+                  <p className="text-base/5 font-bold w-[183px]">
                     อภิบุญ สมศรี 0627852594
                   </p>
                   <p className="text-sm/5">
@@ -121,23 +118,13 @@ const Checkout = () => {
                           <p className="text-xs/5 text-gray-600">
                             หูฟัง HyperX Cloud Earbuds II
                           </p>
-                          <p
-                            className="text-gray-500"
-                            style={{ fontSize: "10px" }}
-                          >
-                            Red
-                          </p>
-                          <p
-                            className="text-gray-500"
-                            style={{ fontSize: "10px" }}
-                          >
-                            จำนวน : 1
-                          </p>
+                          <p className="text-[10px] text-gray-500">Red</p>
+                          <p className="text-[10px] text-gray-500">จำนวน : 1</p>
                         </div>
                         <div>
                           <div className="flex gap-x-1">
                             <div className="h-6 text-xs/5 font-bold text-white rounded-lg bg-red-600">
-                              <p style={{ padding: "2px 2px" }}>-13%</p>
+                              <p className="p-[2px]">-13%</p>
                             </div>
                             <p className="font-semibold">฿1290</p>
                           </div>
@@ -164,7 +151,7 @@ const Checkout = () => {
                     <button>
                       <InfoOutlinedIcon
                         className="text-xs text-blue-600"
-                        style={{ fontSize: "16px" }}
+                        sx={{ fontSize: "16px" }}
                       />
                     </button>
                   </div>
