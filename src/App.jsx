@@ -1,28 +1,25 @@
 import { useState, useRef, useEffect } from "react";
 import Header from "./components/Header";
-import gamingImg from "./assets/gaming.png";
-import gamimgIcon from "./assets/gaming-icon.png";
+import gamingImg from "./assets/images/gaming.png";
+import gamimgIcon from "./assets/images/gaming-icon.png";
 import categoryItems from "./data/category.json";
 import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import bestSeller from "./assets/best-seller.png";
+import bestSeller from "./assets/images/best-seller.png";
 import bestSellerProductItems from "./data/bestSellerProduct.json";
-import top3BadgeProduct from "./assets/top3-rank-badge.png";
-import badgeProduct from "./assets/other-rank-badge.png";
+import BestSellerItem from "./components/BestSellerItem";
 import brandLogoItems from "./data/brandLogo.json";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import fastDeliveryLogo from "./assets/sameday.png";
-import freeShipping from "./assets/free-shipping.png";
+import ProductItem from "./components/ProductItem";
 import productItems from "./data/product.json";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 const App = () => {
   const [progressCategory, setProgressCategory] = useState(0);
   const scrollCategory = useRef(null);
   const [progressProduct, setProgressProduct] = useState(0);
   const scrollProduct = useRef(null);
-  const [hoveredImage, setHoveredImage] = useState(null);
-  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   useEffect(() => {
     let maxProgressCategory =
@@ -88,38 +85,15 @@ const App = () => {
     scrollProduct.current.scrollLeft -= 200;
   };
 
-  const handleMouseOverImage = (index) => {
-    setHoveredImage(index);
-  };
-
-  const handleMouseOutImage = () => {
-    setHoveredImage(null);
-  };
-
-  const handleMouseOverProduct = (index) => {
-    setHoveredProduct(index);
-  };
-
-  const handleMouseOutProduct = () => {
-    setHoveredProduct(null);
-  };
-
   return (
     <>
       <Header />
       <div>
-        <div
-          className="container mx-auto"
-          style={{ height: "180px", minHeight: "180px" }}
-        >
+        <div className="container mx-auto h-[180px] min-h-[180px]">
           <div
-            className="flex flex-col rounded-xl"
+            className="flex flex-col h-full rounded-xl bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `linear-gradient(89.96deg, #161C24 0.03%, rgba(22, 28, 36, 0) 58.44%), url(${gamingImg})`,
-              backgroundSize: "cover",
-              height: "100%",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
             }}
           >
             <div className="mt-2 ml-4 w-full">
@@ -127,40 +101,31 @@ const App = () => {
                 <nav className="text-white">
                   <ol className="flex items-center">
                     <li>
-                      <a href="#" className="text-sm">
-                        หน้าแรก
-                      </a>
+                      <Link to={"/"}>
+                        <p className="text-sm">หน้าแรก</p>
+                      </Link>
                     </li>
                     <li>
-                      <div
-                        className="w-1 h-1 rounded-full bg-white"
-                        style={{ margin: "0 14px" }}
-                      ></div>
+                      <div className="w-1 h-1 mx-[14px] rounded-full bg-white"></div>
                     </li>
                     <li>
-                      <a href="#" className="text-sm">
-                        เกมมิ่ง
-                      </a>
+                      <Link to={"#"}>
+                        <p className="text-sm">เกมมิ่ง</p>
+                      </Link>
                     </li>
                   </ol>
                 </nav>
               </div>
             </div>
-            <div className="flex" style={{ columnGap: "16px" }}>
+            <div className="flex gap-x-4">
               <div className="gaming-icon-container flex justify-center items-center bg-blue-600 rounded-r-xl">
                 <img src={gamimgIcon} className="gaming-icon" alt="Gaming" />
               </div>
-              <div style={{ maxWidth: "640px" }}>
-                <div
-                  className="font-bold text-3xl text-white"
-                  style={{ lineHeight: "48px" }}
-                >
+              <div className="max-w-[640px]">
+                <div className="font-bold text-3xl leading-[48px] text-white">
                   เกมมิ่ง
                 </div>
-                <p
-                  className="text-white text-sm"
-                  style={{ lineHeight: "22px" }}
-                >
+                <p className="text-white text-sm leading-[22px]">
                   เกมมิ่งเกียร์ Gaming Gear แบรนด์ดังชั้นนำ เอาใจเกมเมอร์
                   ทั้งเมาส์เกมมิ่ง หูฟังเกมมิ่ง ลำโพงเกมมิ่ง คีย์บอร์ดเกมมิ่ง
                   โต๊ะและเก้าอี้เกมมิ่ง ดีไซน์สุดเท่ เอาใจทั้งสายเกมคอม PC
@@ -178,26 +143,23 @@ const App = () => {
             className="flex gap-x-2 overflow-auto scroll-smooth"
           >
             {categoryItems.map((item) => (
-              <a key={item.id}>
+              <Link to={"/"} key={item.id}>
                 <div className="gaimg-category flex flex-col justify-end relative">
                   <div className="gaming-category-img absolute">
                     <img
-                      src={`/src/assets/${item.image}`}
+                      src={`/src/assets/images/${item.image}`}
                       alt="gaming headphone"
                     />
                   </div>
                   <div className="gaimg-category-text-container flex justify-end items-center px-3">
                     <div className="gaming-category-text">
-                      <p
-                        className="text-sm font-semibold text-center overflow-hidden"
-                        style={{ lineHeight: "22px" }}
-                      >
+                      <p className="text-sm font-semibold leading-[22px] text-center overflow-hidden">
                         {item.categoryName}
                       </p>
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
           {progressCategory > 0 ? (
@@ -215,20 +177,12 @@ const App = () => {
             <ChevronRightRoundedIcon />
           </button>
           <div className="scroll-progress-container mx-auto mb-4">
-            <div
-              className="scroll-progress relative rounded-3xl mt-4"
-              style={{ backgroundColor: "rgb(244, 246, 248)" }}
-            >
+            <div className="scroll-progress relative rounded-3xl mt-4 bg-gray-100">
               <div
                 className="scroll w-full"
                 style={{ transform: `translateX(${progressCategory}%)` }}
               >
-                <div
-                  className="h-1 rounded"
-                  style={{
-                    background: "rgb(15, 99, 233)",
-                  }}
-                ></div>
+                <div className="h-1 rounded bg-blue-600"></div>
               </div>
             </div>
           </div>
@@ -257,10 +211,7 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div
-            className="container mx-auto text-center mt-2 mb-4"
-            style={{ maxWidth: "800px" }}
-          >
+          <div className="container mx-auto mt-2 mb-4 max-w-[800px] text-center">
             <p className="text-sm">
               เมาส์เกมมิ่งขายดี เมาส์ Logitech G Pro ตัวดัง และเมาส์ Razer
               DeathAdder เมาส์ดีไซน์เท่ ตลอดจนหูฟังเกมมิ่ง HyperX Cloud III
@@ -272,94 +223,7 @@ const App = () => {
         <div className="relative">
           <div ref={scrollProduct} className="flex overflow-auto scroll-smooth">
             {bestSellerProductItems.map((item) => (
-              <div
-                className="mr-4 shrink-0"
-                style={{ width: "200px" }}
-                key={item.id}
-              >
-                <a href="/">
-                  <div className="flex flex-col gap-y-6">
-                    <div
-                      className="relative"
-                      onMouseOver={() => handleMouseOverImage(item.id)}
-                      onMouseOut={handleMouseOutImage}
-                    >
-                      <div className="product-image-container">
-                        <div>
-                          <img
-                            src={`/src/assets/${item.image}`}
-                            alt="hyperx cloud earbud"
-                            style={{
-                              opacity: hoveredImage === item.id ? 0 : 1,
-                            }}
-                          />
-                          <img
-                            src={`/src/assets/${item.imageHover}`}
-                            className="product-image-hover absolute top-0"
-                            alt="hyperx cloud earbud"
-                            style={{
-                              opacity: hoveredImage === item.id ? 1 : 0,
-                            }}
-                          />
-                        </div>
-                      </div>
-                      <div className="badge-product absolute left-0 right-0">
-                        {item.numProduct <= 3 ? (
-                          <div className="top3-badge-product mx-auto">
-                            <img
-                              src={top3BadgeProduct}
-                              style={{ width: "100%" }}
-                              alt="badge product"
-                            />
-                            <span className="absolute mx-auto w-fit inset-0 text-2xl font-bold text-white">
-                              {item.numProduct}
-                            </span>
-                          </div>
-                        ) : (
-                          <div className="other-badge-product mx-auto">
-                            <img
-                              src={badgeProduct}
-                              style={{ width: "100%" }}
-                              alt="badge product"
-                            />
-                            <span className="absolute mx-auto w-fit inset-0 text-2xl font-bold text-white">
-                              {item.numProduct}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-y-2">
-                      <p className="text-sm h-12 text-center">
-                        {item.productName}
-                      </p>
-                      <div className="flex justify-center items-center gap-x-2 px-4">
-                        <div className="flex justify-center items-center text-white h-6 rounded-lg bg-red-600">
-                          {item.discount ? (
-                            <span
-                              className="text-xs font-bold"
-                              style={{ padding: "0px 2px" }}
-                            >
-                              {item.discount}
-                            </span>
-                          ) : null}
-                        </div>
-                        <span className="font-semibold">
-                          {item.displayPrice}
-                        </span>
-                        <div className="flex items-center">
-                          <span
-                            className="text-xs font-normal line-through"
-                            style={{ color: "rgb(145, 158, 171)" }}
-                          >
-                            {item.fullPrice}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+              <BestSellerItem item={item} key={item.id} />
             ))}
           </div>
           {progressProduct > 0 ? (
@@ -377,20 +241,12 @@ const App = () => {
             <ChevronRightRoundedIcon />
           </button>
           <div className="scroll-progress-container mx-auto mb-4">
-            <div
-              className="scroll-progress relative rounded-3xl mt-4"
-              style={{ backgroundColor: "rgb(244, 246, 248)" }}
-            >
+            <div className="scroll-progress relative rounded-3xl mt-4 bg-gray-100">
               <div
                 className="scroll w-full"
                 style={{ transform: `translateX(${progressProduct}%)` }}
               >
-                <div
-                  className="h-1 rounded"
-                  style={{
-                    background: "rgb(15, 99, 233)",
-                  }}
-                ></div>
+                <div className="h-1 rounded bg-blue-600"></div>
               </div>
             </div>
           </div>
@@ -403,11 +259,11 @@ const App = () => {
             <div className="flex justify-center">
               {brandLogoItems.map((item) => (
                 <div className="flex mr-4" key={item.id}>
-                  <a href="/">
+                  <Link to={"/"}>
                     <div className="brand-logo flex">
-                      <img src={`/src/assets/${item.imgLogo}`} />
+                      <img src={`/src/assets/images/${item.imgLogo}`} />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -419,19 +275,12 @@ const App = () => {
           <div className="flex items-center">
             <p className="m-0 mr-1">สินค้าทั้งหมดใน</p>
             <p className="m-0 font-bold">“เกมมิ่ง”</p>
-            <p className="m-0 ml-2 pt-1 text-xs" style={{ color: "#616161" }}>
-              (2016 รายการ)
-            </p>
+            <p className="m-0 ml-2 pt-1 text-xs text-zinc-600">(2016 รายการ)</p>
           </div>
         </div>
         <div className="flex justify-between mb-4">
           <div className="flex items-center">
-            <div
-              className="flex items-center justify-center"
-              style={{
-                height: "36px",
-              }}
-            >
+            <div className="flex items-center justify-center h-9">
               <button className="filter-product flex items-center rounded-lg px-4 py-2">
                 <div></div>
                 <p className="ml-2 text-sm font-bold">ตัวกรองทั้งหมด</p>
@@ -461,112 +310,10 @@ const App = () => {
             </button>
           </div>
         </div>
-        <hr
-          className="w-full border-0 border-b-2 mb-6"
-          style={{ borderColor: "rgba(145, 158, 171, 0.24)" }}
-        />
+        <hr className="w-full border-0 border-b-[1px] border-gray-200 mb-6" />
         <div className="flex flex-wrap w-full ml-4 gap-4">
           {productItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex flex-col flex-grow-0 flex-shrink-0 bg-white rounded-xl pb-3 box-border"
-              onMouseOver={() => handleMouseOverProduct(item.id)}
-              onMouseOut={handleMouseOutProduct}
-              style={{
-                boxShadow:
-                  hoveredProduct === item.id
-                    ? "0px 12px 24px -4px rgba(15, 99, 233, 0.3)"
-                    : "0px 12px 24px -4px rgba(145, 158, 171, 0.16)",
-                color: "rgba(22, 28, 36, 1)",
-                maxWidth: "240px",
-                transition: "box-shadow 0.15s",
-              }}
-            >
-              <a href="/detail">
-                <div className="relative">
-                  <div>
-                    <img
-                      src={`/src/assets/${item.image}`}
-                      alt="product image"
-                      style={{
-                        opacity: hoveredProduct === item.id ? 0 : 1,
-                      }}
-                    />
-                    <img
-                      src={`/src/assets/${item.imageHover}`}
-                      className="absolute top-0"
-                      alt="hyperx cloud earbud"
-                      style={{
-                        opacity: hoveredProduct === item.id ? 1 : 0,
-                        transition: "opacity 0.15s ease 0s",
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={`${
-                      hoveredProduct === item.id
-                        ? "absolute top-0 w-full h-full bg-gray-800 opacity-20 z-10 rounded-xl"
-                        : "hidden"
-                    }`}
-                  ></div>
-                  <div className="absolute top-2 right-2 w-full h-full max-w-10 max-h-10">
-                    <img
-                      src={`/src/assets/${item.brandLogo}`}
-                      alt="brand logo"
-                    />
-                  </div>
-                </div>
-                <div className="mt-1 px-3">
-                  <p className="text-sm mb-1 h-11">{item.productName}</p>
-                  <p className="font-semibold">฿1,490</p>
-                  <div className="flex items-center mt-2">
-                    <div className="flex items-center relative px-1 h-4 rounded bg-red-100">
-                      <p
-                        className="custom-coupon px-0.5 font-bold"
-                        style={{ fontSize: "10px", color: "rgb(227, 31, 38)" }}
-                      >
-                        {item.discountCoupon}
-                      </p>
-                    </div>
-                    {item.fastDelivery ? (
-                      <div className="flex items-center px-1 ml-2 h-4 rounded bg-orange-50">
-                        <div className="w-5 h-5">
-                          <img
-                            src={fastDeliveryLogo}
-                            alt="fast delivery logo"
-                          />
-                        </div>
-                        <p
-                          className="font-bold"
-                          style={{
-                            fontSize: "10px",
-                            color: "rgb(228, 179, 99)",
-                          }}
-                        >
-                          ส่งทันใจ
-                        </p>
-                      </div>
-                    ) : null}
-                    {item.freeShipping && (
-                      <div className="flex items-center px-1 ml-2 h-4 rounded bg-sky-50">
-                        <div className="w-5 h-5">
-                          <img src={freeShipping} alt="free shipping logo" />
-                        </div>
-                        <p
-                          className="font-bold"
-                          style={{
-                            fontSize: "10px",
-                            color: "rgb(144, 194, 231)",
-                          }}
-                        >
-                          ส่งฟรี
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </a>
-            </div>
+            <ProductItem item={item} key={item.id} />
           ))}
         </div>
       </div>

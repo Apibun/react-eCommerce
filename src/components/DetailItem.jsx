@@ -1,6 +1,6 @@
-import productItem from "../assets/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
+import productItem from "../assets/images/hyperx-cloud-ii-gaming-earbuds-red-front-view.jpg";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import newbadgeScore from "../assets/new-badgeScore.png";
+import newbadgeScore from "../assets/images/new-badgeScore.png";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
@@ -10,12 +10,15 @@ import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRound
 import DiscountOutlinedIcon from "@mui/icons-material/DiscountOutlined";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import Divider from "@mui/material/Divider";
-import fastDeliveryLogo from "../assets/sameday.png";
-import freeShipping from "../assets/free-shipping.png";
+import fastDeliveryLogo from "../assets/images/sameday.png";
+import freeShipping from "../assets/images/free-shipping.png";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
-import guarantee from "../assets/guarantee.png";
-import genuine from "../assets/genuine.png";
+import guarantee from "../assets/images/guarantee.png";
+import genuine from "../assets/images/genuine.png";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct } from "../pages/cartSlice";
+import { Link } from "react-router-dom";
 
 const DetailItem = () => {
   const [inputQuantity, setInputQuantity] = useState(1);
@@ -35,47 +38,58 @@ const DetailItem = () => {
     }
   };
 
+  const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+
+  const addProductToCart = () => {
+    let maxId = cart.length == 0 ? 1 : Math.max(...cart.map((e) => e.id)) + 1;
+    dispatch(
+      addProduct({
+        id: maxId,
+        productName: "หูฟัง HyperX Cloud Earbuds II",
+        discount: "-13%",
+        displayPrice: "฿1,290",
+        fullPrice: "฿1,490",
+        color: "Red",
+        quantity: inputQuantity,
+      })
+    );
+  };
+
   return (
     <div className="container mx-auto">
       <nav className="mt-2">
         <ol className="flex items-center">
           <li>
-            <a href="#" className="text-sm">
-              หน้าแรก
-            </a>
+            <Link to={"/"}>
+              <p className="text-sm">หน้าแรก</p>
+            </Link>
           </li>
           <li>
-            <div
-              className="w-1 h-1 rounded-full bg-blue-500"
-              style={{ margin: "0 14px" }}
-            ></div>
+            <div className="w-1 h-1 mx-[14px] rounded-full bg-blue-500"></div>
           </li>
           <li>
-            <a href="#" className="text-sm">
-              เกมมิ่ง
-            </a>
+            <Link to={"#"}>
+              <p className="text-sm">เกมมิ่ง</p>
+            </Link>
           </li>
           <li>
-            <div
-              className="w-1 h-1 rounded-full bg-blue-500"
-              style={{ margin: "0 14px" }}
-            ></div>
+            <div className="w-1 h-1 mx-[14px] rounded-full bg-blue-500"></div>
           </li>
           <li>
-            <a href="#" className="text-sm">
-              หูฟังเกมมิ่ง & ลำโพงเกมมิ่ง
-            </a>
+            <Link to={"#"}>
+              <p className="text-sm">หูฟังเกมมิ่ง & ลำโพงเกมมิ่ง</p>
+            </Link>
           </li>
           <li>
-            <div
-              className="w-1 h-1 rounded-full bg-blue-500"
-              style={{ margin: "0 14px" }}
-            ></div>
+            <div className="w-1 h-1 mx-[14px] rounded-full bg-blue-500"></div>
           </li>
           <li>
-            <a href="#" className="text-sm">
-              หูฟัง HyperX Cloud Earbuds II
-            </a>
+            <Link to={"#"}>
+              <p href="#" className="text-sm">
+                หูฟัง HyperX Cloud Earbuds II
+              </p>
+            </Link>
           </li>
         </ol>
       </nav>
@@ -99,21 +113,19 @@ const DetailItem = () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-1 w-4/12">
-          <a href="#">
+          <Link to={"#"}>
             <p className="text-xs font-medium text-blue-600">HyperX</p>
-          </a>
+          </Link>
           <div className="flex justify-between items-center">
             <p className="text-lg font-bold">หูฟัง HyperX Cloud Earbuds II</p>
             <div className="flex flex-col justify-center items-center w-12 h-12 text-blue-600">
               <button className="p-1 rounded-full bg-transparent hover:bg-blue-100/55">
                 <FavoriteBorderRoundedIcon />
               </button>
-              <span style={{ fontSize: "10px", lineHeight: "16px" }}>
-                ถูกใจ
-              </span>
+              <span className="text-[10px] leading-4">ถูกใจ</span>
             </div>
           </div>
-          <p style={{ fontSize: "10px", color: "rgba(69, 79, 91, 1)" }}>
+          <p className="text-[10px] text-gray-600">
             รหัสสินค้า 1512124000001 (106872)
           </p>
           <div className="flex items-center rounded-xl p-2 bg-gray-50 gap-x-3 mt-3">
@@ -142,9 +154,11 @@ const DetailItem = () => {
                     <StarRoundedIcon />
                   </div>
                 </div>
-                <a href="#" className="self-end pl-1">
-                  <p className="text-sm text-blue-600">จาก 34 รีวิว</p>
-                </a>
+                <Link to={"#"}>
+                  <div className="self-end pl-1">
+                    <p className="text-sm text-blue-600">จาก 34 รีวิว</p>
+                  </div>
+                </Link>
               </div>
               <div className="flex items-center gap-x-1">
                 <p className="font-semibold">27 คน</p>
@@ -155,14 +169,9 @@ const DetailItem = () => {
           <div className="flex flex-col">
             <div className="flex items-center gap-x-2">
               <div className="flex justify-center items-center text-white rounded-lg bg-red-600">
-                <p className="font-semibold" style={{ padding: "2px 4px" }}>
-                  -13%
-                </p>
+                <p className="font-semibold px-1 py-[2px]">-13%</p>
               </div>
-              <p
-                className="text-3xl font-bold text-blue-600"
-                style={{ lineHeight: "48px" }}
-              >
+              <p className="text-3xl font-bold text-blue-600 leading-[48px]">
                 ฿1,290
               </p>
               <p className="text-xs text-slate-500/80 line-through mb-2 self-end">
@@ -192,7 +201,7 @@ const DetailItem = () => {
                   onClick={minusQuantity}
                   disabled={inputQuantity <= 1}
                 >
-                  <RemoveRoundedIcon style={{ fontSize: "20px" }} />
+                  <RemoveRoundedIcon sx={{ fontSize: "20px" }} />
                 </button>
                 <div className="flex item-center">
                   <input
@@ -209,34 +218,34 @@ const DetailItem = () => {
                   onClick={plusQuantity}
                   disabled={inputQuantity >= 99}
                 >
-                  <AddRoundedIcon style={{ fontSize: "20px" }} />
+                  <AddRoundedIcon sx={{ fontSize: "20px" }} />
                 </button>
               </div>
             </div>
           </div>
           <div className="flex gap-x-2 mt-3">
-            <a href="#">
+            <Link to={"#"}>
               <div className="flex flex-col w-14 h-14 items-center text-blue-600">
                 <button className="p-1 rounded-full bg-transparent hover:bg-blue-100/55">
                   <CompareArrowsRoundedIcon />
                 </button>
-                <p style={{ fontSize: "10px" }}>เปรียบเทียบ</p>
+                <p className="text-[10px]">เปรียบเทียบ</p>
               </div>
-            </a>
+            </Link>
             <div className="flex flex-col w-14 h-14 items-center text-blue-600">
               <button className="p-1 rounded-full bg-transparent hover:bg-blue-100/55">
                 <QuestionAnswerOutlinedIcon />
               </button>
-              <p style={{ fontSize: "10px" }}>แชท</p>
+              <p className="text-[10px]">แชท</p>
             </div>
             <button className="px-2 py-4 w-36 h-12 bg-blue-200/70 rounded-lg text-sm font-bold text-blue-600 transition-colors hover:bg-blue-500/40">
               ซื้อเลย
             </button>
-            <button className="flex justify-center items-center px-2 py-4 w-36 h-12 bg-blue-600 rounded-lg text-sm font-bold text-white transition-shadow hover:shadow-lg hover:shadow-blue-300/55">
-              <AddShoppingCartRoundedIcon
-                className="mr-1"
-                style={{ fontSize: "20px" }}
-              />
+            <button
+              className="flex justify-center items-center px-2 py-4 w-36 h-12 bg-blue-600 rounded-lg text-sm font-bold text-white transition-shadow hover:shadow-lg hover:shadow-blue-300/55"
+              onClick={() => addProductToCart()}
+            >
+              <AddShoppingCartRoundedIcon className="text-[20px] mr-1" />
               <p>ใส่รถเข็น</p>
             </button>
           </div>
@@ -281,7 +290,7 @@ const DetailItem = () => {
                     <button className="h-8 px-6 rounded-lg bg-red-600 text-sm font-bold text-white text-center">
                       เก็บ
                     </button>
-                    <p className="text-gray-500" style={{ fontSize: "10px" }}>
+                    <p className="text-[10px] text-gray-500">
                       ใช้ได้ถึง 30 มิ.ย. 67
                     </p>
                   </div>
@@ -300,12 +309,11 @@ const DetailItem = () => {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <a
-                      href="#"
-                      className="text-sm font-semibold hover:text-blue-600 hover:transition-colors"
-                    >
-                      ส่งทันใจ Sameday
-                    </a>
+                    <Link to={"#"}>
+                      <p className="text-sm font-semibold hover:text-blue-600 hover:transition-colors">
+                        ส่งทันใจ Sameday
+                      </p>
+                    </Link>
                     <p className="text-sm/6 text-gray-700">
                       ได้รับสินค้าภายในวันนี้ ไม่เกิน 22:00 น.
                       เมื่อสั่งซื้อและชำระเงินไม่เกิน 15:00 น.
@@ -321,19 +329,18 @@ const DetailItem = () => {
                     />
                   </div>
                   <div className="flex flex-col w-60">
-                    <a
-                      href="#"
-                      className="text-sm font-semibold hover:text-blue-600 hover:transition-colors"
-                    >
-                      ส่งปกติ (ฟรี)
-                    </a>
+                    <Link to={"#"}>
+                      <p className="text-sm font-semibold hover:text-blue-600 hover:transition-colors">
+                        ส่งปกติ (ฟรี)
+                      </p>
+                    </Link>
                     <span className="text-sm/6 text-gray-700">
                       จัดส่งฟรีทั่วประเทศ เมื่อซื้อครบ 199.-
                       <br />
                       <div className="inline-block mr-1 text-blue-600">
                         <LocationOnRoundedIcon
                           className="relative bottom-1"
-                          style={{ fontSize: "20px" }}
+                          sx={{ fontSize: "20px" }}
                         />
                         <span>กรุงเทพมหานคร</span>
                       </div>
@@ -356,12 +363,11 @@ const DetailItem = () => {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <a
-                      href="#"
-                      className="text-sm font-semibold hover:text-blue-600 hover:transition-colors"
-                    >
-                      การรับประกัน
-                    </a>
+                    <Link to={"#"}>
+                      <p className="text-sm font-semibold hover:text-blue-600 hover:transition-colors">
+                        การรับประกัน
+                      </p>
+                    </Link>
                     <p className="text-sm/6 text-gray-700">
                       รับประกันโดยศูนย์ไทยระยะเวลา 2 ปี
                     </p>
@@ -376,12 +382,11 @@ const DetailItem = () => {
                     />
                   </div>
                   <div className="flex flex-col w-60">
-                    <a
-                      href="#"
-                      className="text-sm font-semibold hover:text-blue-600 hover:transition-colors"
-                    >
-                      ของแท้ 100%
-                    </a>
+                    <Link to={"#"}>
+                      <p className="text-sm font-semibold hover:text-blue-600 hover:transition-colors">
+                        ของแท้ 100%
+                      </p>
+                    </Link>
                     <p className="text-sm/6 text-gray-700">
                       เป็นตัวแทนจำหน่ายอย่างเป็นทางการ
                     </p>
